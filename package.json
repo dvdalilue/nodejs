@@ -2,11 +2,15 @@
   "name": "krono",
   "version": "1.0.0",
   "description": "",
-  "main": "example.js",
+  "engines": {
+    "node": "6.9.5"	  
+  },
+  "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["node","heroku"],
   "author": "",
   "license": "ISC"
 }
