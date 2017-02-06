@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "ejs": "2.4.1",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "firebase-tools": "3.2.2"
   },
   "keywords": [
     "node",

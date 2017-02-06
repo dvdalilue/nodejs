@@ -1,0 +1,64 @@
+{
+    "productos" : {
+        "1" : {
+            "nombre" : "Agua",
+            "descripcion" : "Liquido vital",
+            "sector" : "Mercado",
+            "rating" : 5
+        },
+        "2" : {
+            "nombre" : "Papel",
+            "descripcion" : "Articulo de oficina",
+            "sector" : "Papeleria",
+            "rating" : 3
+        },
+        "3" : {
+            "nombre" : "jabon",
+            "descripcion" : "Producto de higiene personal",
+            "sector" : "Farmacia",
+            "rating" : 3
+        },
+        "4" : {
+            "nombre" : "festal",
+            "descripcion" : "Medicina para el malestar estomacal",
+            "sector" : "Farmacia",
+            "rating" : 3
+        },
+        "5" : {
+            "nombre" : "franela",
+            "descripcion" : "Prenda de vestir",
+            "sector" : "Ropa",
+            "rating" : 3
+        },
+        "6" : {
+            "nombre" : "hamburguesa",
+            "descripcion" : "Alimento completo",
+            "sector" : "Comida",
+            "rating" : 3
+        },
+        "7" : {
+            "nombre" : "refresco",
+            "descripcion" : "Bebida carbonatada",
+            "sector" : "Comida",
+            "rating" : 3
+        },
+        "8" : {
+            "nombre" : "cuaderno",
+            "descripcion" : "Aticulo de oficina",
+            "sector" : "Papeleria",
+            "rating" : 3
+        },
+        "9" : {
+            "nombre" : "perrarina",
+            "descripcion" : "Alimento para perros",
+            "sector" : "Veterinaria",
+            "rating" : 3
+        },
+        "10" : {
+            "nombre" : "termometro",
+            "descripcion" : "Medidor de temperatura",
+            "sector" : "Farmacia",
+            "rating" : 3
+        }
+    }
+}
