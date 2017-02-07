@@ -14,11 +14,6 @@
       return html;
     }
   </script>
-  <script type="text/javascript">
-    firebase.database().ref('productos').on("child_changed", function(snapshot) {
-      console.log("El producto actualizado es: " + snapshot.val().nombre);
-    });
-  </script>
 </head>
 
 <body>
