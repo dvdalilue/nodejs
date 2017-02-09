@@ -1,0 +1,65 @@
+{
+    "modificados" : {},
+    "productos" : {
+        "1": {
+            "descripcion" : "Líquido vital",
+            "nombre" : "Agua",
+            "rating" : 5,
+            "sector" : "Mercado"
+        },
+        "2": {
+            "descripcion" : "Artículo de oficina",
+            "nombre" : "Papel",
+            "rating" : 3,
+            "sector" : "Papelería"
+        },
+        "3": {
+            "descripcion" : "Producto de higiene personal",
+            "nombre" : "Jabón",
+            "rating" : 3,
+            "sector" : "Farmacia"
+        },
+        "4": {
+            "descripcion" : "Medicina para el malestar estomacal",
+            "nombre" : "Festal",
+            "rating" : 4,
+            "sector" : "Farmacia"
+        },
+        "5": {
+            "descripcion" : "Prenda de vestir",
+            "nombre" : "Franela",
+            "rating" : 2,
+            "sector" : "Ropa"
+        },
+        "6": {
+            "descripcion" : "Alimento completo",
+            "nombre" : "Hamburguesa",
+            "rating" : 5,
+            "sector" : "Comida"
+        },
+        "7": {
+            "descripcion" : "Bebida carbonatada",
+            "nombre" : "Refresco",
+            "rating" : 4,
+            "sector" : "Comida"
+        },
+        "8": {
+            "descripcion" : "Artículo de oficina",
+            "nombre" : "Cuaderno",
+            "rating" : 2,
+            "sector" : "Papelería"
+        },
+        "9": {
+            "descripcion" : "Alimento para perros",
+            "nombre" : "Perrarina",
+            "rating" : 3,
+            "sector" : "Veterinaria"
+        },
+        "10": {
+            "descripcion" : "Medidor de temperatura",
+            "nombre" : "Termometro",
+            "rating" : 4,
+            "sector" : "Farmacia"
+        } 
+    }
+}
