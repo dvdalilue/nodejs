@@ -1,0 +1,32 @@
+functions:
+  - isLoggedIn(): auth != null
+
+schema:
+  type: object
+  properties:
+    productos: # the productos subtree is a collection of productos
+      type: object
+      $producto: #wildchild expression of many children
+        type: object
+        properties: #each user has an optional inbox and outbox
+          nombre:
+            type: string
+          descripcion:
+            type: string
+          rating:
+            type: number
+            minimum: 1
+            maximum: 5
+          sector:
+            type: string
+
+access:
+  - location: /
+    read:  true
+    write: true && isLoggedIn()
+  - location: /productos
+    read:  true
+    write: true && isLoggedIn()
+  - location: /modificados
+    read:  true
+    write: true && isLoggedIn()

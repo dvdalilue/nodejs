@@ -1,0 +1,34 @@
+{
+  "rules":{
+    ".write":"false",
+    ".read":"true",
+    "productos": {
+      ".write":"false",
+      ".read":"true",
+      "$producto": {
+        ".write":"((((!newData.exists()||newData.hasChildren())&&(!newData.child('nombre').exists()||newData.child('nombre').isString())&&(!newData.child('descripcion').exists()||newData.child('descripcion').isString())&&(!newData.child('rating').exists()||newData.child('rating').isNumber())&&(newData.child('rating').val()==null||newData.child('rating').val()>=1)&&(newData.child('rating').val()==null||newData.child('rating').val()<=5)&&(!newData.child('sector').exists()||newData.child('sector').isString())&&auth!=null)))",
+        ".read":"true",
+        "nombre": {
+          ".write":"((((!newData.exists()||newData.isString())&&auth!=null)))",
+          ".read":"true"
+        },
+        "descripcion": {
+          ".write":"((((!newData.exists()||newData.isString())&&auth!=null)))",
+          ".read":"true"
+        },
+        "rating": {
+          ".write":"((((!newData.exists()||newData.isNumber())&&(newData.val()==null||newData.val()>=1)&&(newData.val()==null||newData.val()<=5)&&auth!=null)))",
+          ".read":"true"
+        },
+        "sector": {
+          ".write":"((((!newData.exists()||newData.isString())&&auth!=null)))",
+          ".read":"true"
+        }
+      }
+    },
+    "modificados": {
+      ".write":"(((auth!=null)))",
+      ".read":"true"
+    }
+  }
+}
