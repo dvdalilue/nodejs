@@ -1,5 +1,6 @@
 var express = require('express');
 var firebase = require('firebase');
+
 var config = {
     apiKey: "AIzaSyAo6t87dpnHv6q1vSIq1nR0JPhaTZ5O1xg",
     authDomain: "test-krono.firebaseapp.com",
@@ -8,6 +9,7 @@ var config = {
     messagingSenderId: "842158548684"
   };
 firebase.initializeApp(config);
+
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -27,27 +29,40 @@ app.listen(app.get('port'), function() {
 });
 
 firebase.database().ref('productos').on("child_changed", function(snapshot) {
-    const nodemailer = require('nodemailer');
-
-    let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'krononodejs@gmail.com',
-            pass: 'nodejskrono'
-        }
+    firebase.auth().signInAnonymously().catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log('error: ' + errorCode + ', ' + errorMessage)
     });
 
-    let mailOptions = {
-        from: '"KronoApp" <no-reply@test-krono.com>', // sender address
-        to: 'dvdalilue@gmail.com', // list of receivers
-        subject: '[Krono] Producto cambiado: \'' + snapshot.val().nombre + '\'', // Subject line
-        html: 'El Producto \'' + snapshot.val().nombre + '\' ha sido modificado' // html body
-    };
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            firebase.database().ref('modificados/' + snapshot.key).push(
+                (new Date().toString())
+            );
+            const nodemailer = require('nodemailer');
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
+            let transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'krononodejs@gmail.com',
+                    pass: 'nodejskrono'
+                }
+            });
+
+            let mailOptions = {
+                from: '"KronoApp" <no-reply@test-krono.com>', // sender address
+                to: 'dvdalilue@gmail.com', // list of receivers
+                subject: '[Krono] Producto cambiado: \'' + snapshot.val().nombre + '\'', // Subject line
+                html: 'El Producto \'' + snapshot.val().nombre + '\' ha sido modificado' // html body
+            };
+
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    return console.log(error);
+                }
+            });
         }
-        console.log('Message %s sent: %s', info.messageId, info.response);
     });
 });
